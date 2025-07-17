@@ -2,9 +2,10 @@ version: 2.1
 
 jobs:
   run-python-on-windows:
+
+    resource_class: 'windows.medium'
     machine:
-      image: windows-server-2022-gui  # Valid image
-    resource_class: windows.medium     # Required
+      image: 'windows-server-2022-gui:current'
     parameters:
       run_id:
         type: string
