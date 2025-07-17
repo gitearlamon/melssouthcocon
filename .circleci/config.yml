@@ -2,9 +2,9 @@ version: 2.1
 
 executors:
   windows-executor:
-    machine:
-      image: 'windows-server-2019-vs2019' # Windows image từ CircleCI
-    shell: powershell.exe
+    type: machine
+    resource_class: windows.medium # required explicitly
+    image: 'windows-server-2022-gui' # use current supported image
 
 jobs:
   run-python-on-windows:
