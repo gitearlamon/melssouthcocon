@@ -1,14 +1,10 @@
 version: 2.1
 
-executors:
-  windows-executor:
-    type: machine
-    resource_class: windows.medium # required explicitly
-    image: 'windows-server-2022-gui' # use current supported image
-
 jobs:
   run-python-on-windows:
-    executor: windows-executor
+    machine:
+      image: windows-server-2022-gui  # Valid image
+    resource_class: windows.medium     # Required
     parameters:
       run_id:
         type: string
@@ -42,6 +38,6 @@ workflows:
       - run-python-on-windows:
           matrix:
             parameters:
-              run_id: ["job1", "job2", "job3", "job4", "job5", "job6","job7", "job8", "job9", "job10",
-                       "job11", "job12", "job13", "job14", "job15", "job16","job17", "job18", "job19", "job20",
-                       "job21", "job22", "job23", "job24", "job25", "job26","job27", "job28", "job29", "job30"]
+              run_id: ["job1", "job2", "job3", "job4", "job5", "job6", "job7", "job8", "job9", "job10",
+                       "job11", "job12", "job13", "job14", "job15", "job16", "job17", "job18", "job19", "job20",
+                       "job21", "job22", "job23", "job24", "job25", "job26", "job27", "job28", "job29", "job30"]
